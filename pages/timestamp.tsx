@@ -1,7 +1,7 @@
 import React from "react";
 import Clock from "../components/clock";
 import DateTranslate from "../components/date";
-import Layout from "../components/layout";
+import {Layout} from "../components/layout";
 
 
 export default class Timestamp extends React.Component<any> {

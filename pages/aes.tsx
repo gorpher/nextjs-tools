@@ -1,6 +1,7 @@
-import Layout from "../components/layout";
+import {Layout} from "../components/layout";
 import React, {useState} from "react";
 import CryptoJS from 'crypto-js';
+import Nav from "../components/nav";
 
 
 interface isState {
@@ -192,7 +193,7 @@ export default class DES extends React.Component<any, isState> {
 
     render() {
         return (
-            <Layout siteTitle={this.siteTitle}>
+            <Layout siteTitle={this.siteTitle} right={<Nav/>}>
                 <div>
                     <div>
                         <textarea className="textarea" cols={30} rows={10} name="a" value={this.state.a}

@@ -8,10 +8,15 @@ export default function Grid() {
                 {
                     list.flat().map(item => (
                         <div className="Grid_card" key={item.url}   >
-                            <div className="clickable" onClick={()=>{window.open(item.url)}}>
+                            <div className="clickable" onClick={(e)=>{
+                                e.preventDefault()
+                                window.open(item.url)
+                            }}>
                                 <h3 className="Grid_card-heading">{item.title}</h3>
-                                <p className="Grid_card-body">自动编译并打包。从一开始就为生产环境而优化。</p>
-                                <div className="Grid_card-link"><a href={item.url}>{item.title}</a></div>
+                                {
+                                    // (item.note)&&(<p className="Grid_card-body">{item.note}</p>)
+                                }
+                                <div className="Grid_card-link"><a href={item.url}>{item.title} →</a></div>
                             </div>
                         </div>
                     ))
