@@ -1,32 +1,11 @@
 import React from "react";
+import format from 'date-fns/format';
 
-const dateFormat = 'yyyy-MM-dd hh:mm:ss';
+// const dateFormat = 'yyyy-MM-dd hh:mm:ss';
 
-// 为Date添加format方法，需要定义接口，否则会报错。
-interface Date {
-    format(fmt: string): string;
+const dateFormat = (date: Date) => {
+    return format(date, 'yyyy-MM-dd hh:mm:ss')
 }
-
-Date.prototype['format'] = function (fmt) {
-    let o = {
-        "M+": this.getMonth() + 1,
-        "d+": this.getDate(),
-        "h+": this.getHours(),
-        "m+": this.getMinutes(),
-        "s+": this.getSeconds(),
-        "q+": Math.floor((this.getMonth() + 3) / 3),
-        "s": this.getMilliseconds()
-    };
-    if (/(y+)/.test(fmt)) {
-        fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
-    }
-    for (let k in o) {
-        if (new RegExp("(" + k + ")").test(fmt)) {
-            fmt = fmt.replace(RegExp.$1, (RegExp.$1.length === 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
-        }
-    }
-    return fmt;
-};
 
 interface isState {
     datetime?: string
@@ -47,7 +26,8 @@ export default class DateTranslate extends React.Component<any, isState> {
             timestamp: timestamp,
             unit: 1,
             unit1: 1,
-            datetime1: new Date(parseInt(timestamp)).format(dateFormat),
+
+            datetime1: dateFormat(new Date(parseInt(timestamp))),
         };
         this.HandleChange = this.HandleChange.bind(this);
         this.Translate = this.Translate.bind(this);
@@ -70,12 +50,12 @@ export default class DateTranslate extends React.Component<any, isState> {
     Translate() {
         if (this.state.unit === 1) {
             this.setState({
-                datetime: new Date(parseInt(this.state.timestamp)).format(dateFormat)
+                datetime: dateFormat(new Date(parseInt(this.state.timestamp)))
             })
             return
         }
         this.setState({
-            datetime: new Date(parseInt(this.state.timestamp) * 1000).format(dateFormat)
+            datetime: dateFormat(new Date(parseInt(this.state.timestamp) * 1000))
         })
         return;
     }
