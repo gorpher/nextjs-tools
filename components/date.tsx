@@ -2,7 +2,12 @@ import React from "react";
 
 const dateFormat = 'yyyy-MM-dd hh:mm:ss';
 
-Date.prototype.format = function (fmt) {
+// 为Date添加format方法，需要定义接口，否则会报错。
+interface Date {
+    format(fmt: string): string;
+}
+
+Date.prototype['format'] = function (fmt) {
     let o = {
         "M+": this.getMonth() + 1,
         "d+": this.getDate(),
@@ -22,7 +27,6 @@ Date.prototype.format = function (fmt) {
     }
     return fmt;
 };
-
 
 interface isState {
     datetime?: string
@@ -99,14 +103,15 @@ export default class DateTranslate extends React.Component<any, isState> {
                     <option value="1">ms</option>
                     <option value="2">s</option>
                 </select>
-                <button className="button success" onClick={this.Translate}><i className="fa fa-arrow-down"/>转换
+                <button className="button success" onClick={this.Translate}><i className="fa fa-exchange"/>转换
                 </button>
                 <input type="text" name="datetime" value={this.state.datetime} onChange={this.HandleChange}/>
             </div>
+            <br/>
             <div className="group">
                 <span className="label">北京时间</span>
                 <input type="text" name="datetime1" value={this.state.datetime1} onChange={this.HandleChange}/>
-                <button className="button success" onClick={this.Translate1}><i className="fa fa-arrow-down"/>转换
+                <button className="button success" onClick={this.Translate1}><i className="fa fa-exchange"/>转换
                 </button>
                 <input type="text" name="timestamp1" value={this.state.timestamp1} onChange={this.HandleChange}/>
                 <select className="select" name="unit1" onChange={this.HandleChange}

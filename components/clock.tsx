@@ -75,9 +75,9 @@ export default class Clock extends React.Component<any, isState> {
                     <option value="2">s</option>
                 </select>
                 <span className="label"></span>
-                <button className="button success" onClick={this.Start}><i className="fa fa-arrow-down"/>开始
+                <button className="button success" onClick={this.Start}><i className="fa fa-play"/>开始
                 </button>
-                <button className="button info" onClick={this.Stop}><i className="fa fa-arrow-up"/>停止
+                <button className="button info" onClick={this.Stop}><i className="fa fa-stop"/>停止
                 </button>
                 <button className="button" onClick={this.Refresh}>刷新</button>
             </div>
