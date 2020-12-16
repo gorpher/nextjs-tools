@@ -5,24 +5,28 @@ import Nav from "../components/nav";
 
 
 interface isState {
-    a?: string,
-    b?: string,
+    a?: string
+    b?: string
     key?: string
     iv?: string
     param1?: string
     param2?: string
-    encode?: string,
+    encode?: string
 
 }
 
 export default class DES extends React.Component<any, isState> {
     private readonly storageKey: string;
     private readonly siteTitle: string;
+    private readonly description: string;
+    private readonly keyword: string;
 
     constructor(props) {
         super(props);
         this.storageKey = 'aes'
         this.siteTitle = 'AES加密/解密'
+        this.keyword='AES加密,AES解密,AES算法'
+        this.description='在线AES加密、解密工具,AES加密,AES解密,AES算法'
         this.Decrypt = this.Decrypt.bind(this);
         this.Encrypt = this.Encrypt.bind(this);
         this.Clear = this.Clear.bind(this);

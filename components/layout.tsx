@@ -42,20 +42,35 @@ export function Header() {
 }
 
 
-export function Layout({children, left, right, siteTitle}: {
+export function Layout({children, left, right, siteTitle, description, keyword}: {
     children: React.ReactNode
     left?: React.ReactNode
     right?: React.ReactNode
     siteTitle?: string
+    keyword?: string
+    description?: string
 }) {
     return (
         <>
             <Head>
                 <link rel="icon" href="/favicon.ico"/>
-                <meta name="baidu-site-verification" content="code-Xbqjfarq6u" />
+                <meta name="baidu-site-verification" content="code-Xbqjfarq6u"/>
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
-                <meta name="description" content="开发工具"/>
-                <meta name="og:title" content={siteTitle}/>
+                <meta name="description" content={description}/>
+                <meta name="keywords" content={keyword}/>
+                {
+                    siteTitle ? (
+                        <>
+                            <meta name="og:title" content={siteTitle + '｜' + '在线工具 - MyTool'}/>
+                            <title>{siteTitle + '｜' + '在线工具 - MyTool'}</title>
+                        </>
+                    ) : (
+                        <>
+                            <meta name="og:title" content={'我的在线工具 - MyTool'}/>
+                            <title>{'我的在线工具 - MyTool'}</title>
+                        </>
+                    )
+                }
             </Head>
             <Header/>
             <div className={styles.container}>
