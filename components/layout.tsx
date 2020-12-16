@@ -52,6 +52,7 @@ export function Layout({children, left, right, siteTitle}: {
         <>
             <Head>
                 <link rel="icon" href="/favicon.ico"/>
+                <meta name="baidu-site-verification" content="code-Xbqjfarq6u" />
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
                 <meta name="description" content="开发工具"/>
                 <meta name="og:title" content={siteTitle}/>
