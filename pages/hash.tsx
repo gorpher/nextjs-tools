@@ -126,36 +126,46 @@ export default class Hash extends React.Component<any, isState> {
         return (
             <Layout siteTitle={this.siteTitle} right={<Nav/>}>
                 <div>
-                    <div>
-                        <textarea className="textarea" cols={30} rows={10} name="a" value={this.state.a} placeholder="字符串"
+                    <div className="field">
+                        <textarea className="textarea" cols={30} rows={10} name="a" value={this.state.a}
+                                  placeholder="字符串"
                                   onChange={this.handleChange}/>
                     </div>
-                    <div>
-                        <div className="group">
-                            <select className="select" name="encode" onChange={this.handleChange}
-                                    value={this.state.encode}>
-                                <option value="MD5">MD5</option>
-                                <option value="SHA1">SHA1</option>
-                                <option value="SHA224">SHA224</option>
-                                <option value="SHA256">SHA256</option>
-                                <option value="SHA384">SHA384</option>
-                                <option value="SHA512">SHA512</option>
-                                <option value="Hmac-MD5">Hmac-MD5</option>
-                                <option value="Hmac-SHA1">Hmac-SHA1</option>
-                                <option value="Hmac-SHA224">Hmac-SHA224</option>
-                                <option value="Hmac-SHA256">Hmac-SHA256</option>
-                                <option value="Hmac-SHA384">Hmac-SHA384</option>
-                                <option value="Hmac-SHA512">Hmac-SHA512</option>
-                            </select>
+                    <div className="field  has-addons">
+                        <p className="control">
+                                <span className="select">
+                                 <select  name="encode" onChange={this.handleChange}
+                                         value={this.state.encode}>
+                                                            <option value="MD5">MD5</option>
+                                                            <option value="SHA1">SHA1</option>
+                                                            <option value="SHA224">SHA224</option>
+                                                            <option value="SHA256">SHA256</option>
+                                                            <option value="SHA384">SHA384</option>
+                                                            <option value="SHA512">SHA512</option>
+                                                            <option value="Hmac-MD5">Hmac-MD5</option>
+                                                            <option value="Hmac-SHA1">Hmac-SHA1</option>
+                                                            <option value="Hmac-SHA224">Hmac-SHA224</option>
+                                                            <option value="Hmac-SHA256">Hmac-SHA256</option>
+                                                            <option value="Hmac-SHA384">Hmac-SHA384</option>
+                                                            <option value="Hmac-SHA512">Hmac-SHA512</option>
+                                                        </select>
+                                </span>
+                        </p>
+                        <p className="control is-expanded">
                             <input className="input" type="text" name="key" value={this.state.key} placeholder="密钥,非必填"
-                               onChange={this.handleChange}/>
-                            <button className="button success" onClick={this.Encrypt}><i className="fa fa-arrow-down"/>计算
+                                   onChange={this.handleChange}/>
+                        </p>
+                        <p className="control">
+                            <button className="button is-success " onClick={this.Encrypt}>
+                                <i className="fa fa-arrow-down  is-small"/>计算
                             </button>
-                            <button className="button" onClick={this.Clear}>清空</button>
-                        </div>
+                        </p>
+                        <p className="control">
+                            <button className="button is-ghost" onClick={this.Clear}>清空</button>
+                        </p>
                     </div>
-                    <div>
-                        <input className="input" type="text"  name="b" value={this.state.b}  style={{width:'100%'}}
+                    <div className="field">
+                        <input className="input" type="text" name="b" value={this.state.b} style={{width: '100%'}}
                                placeholder="Hash值"
                                onChange={this.handleChange}/>
                     </div>

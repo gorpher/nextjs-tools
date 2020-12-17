@@ -7,7 +7,7 @@ import Dropdown from "./dropdown";
 export function Middle({children}: {
     children: React.ReactNode
 }) {
-    return (<div className={styles.middle}>{children}</div>)
+    return (<div className="container">{children}</div>)
 }
 
 export function Left({children}: {
@@ -55,6 +55,7 @@ export function Layout({children, left, right, siteTitle, description, keyword}:
             <Head>
                 <link rel="icon" href="/favicon.ico"/>
                 <meta name="baidu-site-verification" content="code-Xbqjfarq6u"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
                 <meta name="description" content={description}/>
                 <meta name="keywords" content={keyword}/>

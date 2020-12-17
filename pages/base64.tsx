@@ -1,5 +1,5 @@
 import {Layout} from "../components/layout";
-import React, {useState} from "react";
+import React from "react";
 import Nav from "../components/nav";
 
 interface isState {
@@ -94,20 +94,25 @@ export default class Base64 extends React.Component<any, isState> {
         return (
             <Layout siteTitle={this.siteTitle} right={<Nav/>}>
                 <div>
-                    <div>
+                    <div className="field">
                         <textarea className="textarea" cols={30} rows={10} name="a" value={this.state.a}
                                   onChange={this.handleChange}/>
                     </div>
-                    <div>
-                        <div className="group">
-                            <button className="button success" onClick={this.Encrypt}><i className="fa fa-arrow-down"/>编码
+                    <div className="field is-grouped">
+                        <div className="control">
+                            <button className="button is-success" onClick={this.Encrypt}><i
+                                className="fa fa-arrow-down"/>编码
                             </button>
-                            <button className="button info" onClick={this.Decrypt}><i className="fa fa-arrow-up"/>解码
+                        </div>
+                        <div className="control">
+                            <button className="button is-info" onClick={this.Decrypt}><i className="fa fa-arrow-up"/>解码
                             </button>
+                        </div>
+                        <div className="control">
                             <button className="button" onClick={this.Clear}>清空</button>
                         </div>
                     </div>
-                    <div>
+                    <div className="field">
                         <textarea className="textarea" cols={30} rows={10} name="b" value={this.state.b}
                                   onChange={this.handleChange}/>
                     </div>

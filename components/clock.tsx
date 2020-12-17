@@ -66,20 +66,28 @@ export default class Clock extends React.Component<any, isState> {
 
     render() {
         return (
-            <div className="group">
-                <span className="label">当前时间</span>
-                <input type="text" defaultValue={this.state.now}/>
-                <select className="select" name="unit" onChange={this.HandleChange}
-                        value={this.state.unit}>
-                    <option value="1">ms</option>
-                    <option value="2">s</option>
-                </select>
-                <span className="label"></span>
-                <button className="button success" onClick={this.Start}><i className="fa fa-play"/>开始
-                </button>
-                <button className="button info" onClick={this.Stop}><i className="fa fa-stop"/>停止
-                </button>
-                <button className="button" onClick={this.Refresh}>刷新</button>
+
+            <div className="level">
+                <div className="level-item has-addons">
+                    <a className="button is-static">
+                        当前时间
+                    </a>
+                    <input type="text" className="input " defaultValue={this.state.now}/>
+                    <div className="select">
+                        <select name="unit" onChange={this.HandleChange}
+                                value={this.state.unit}>
+                            <option value="1">ms</option>
+                            <option value="2">s</option>
+                        </select>
+                    </div>
+                </div>
+                <div className="level-item">
+                    <button className="button is-success is-light" onClick={this.Start}><i className="fa fa-play"/>开始
+                    </button>
+                    <button className="button is-warning is-light" onClick={this.Stop}><i className="fa fa-stop"/>停止
+                    </button>
+                    <button className="button" onClick={this.Refresh}>刷新</button>
+                </div>
             </div>
         );
     }

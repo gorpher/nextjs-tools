@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "bulma": "^0.9.1",
     "crypto-js": "^4.0.0",
     "date-fns": "^2.16.1",
     "gray-matter": "^4.0.2",

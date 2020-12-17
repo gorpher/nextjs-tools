@@ -74,31 +74,48 @@ export default class DateTranslate extends React.Component<any, isState> {
     }
 
     render() {
-        return (<div>
-            <div className="group">
-                <span className="label">Unix时间戳</span>
-                <input type="text" name="timestamp" value={this.state.timestamp} onChange={this.HandleChange}/>
-                <select className="select" name="unit" onChange={this.HandleChange}
-                        value={this.state.unit}>
-                    <option value="1">ms</option>
-                    <option value="2">s</option>
-                </select>
-                <button className="button success" onClick={this.Translate}><i className="fa fa-exchange"/>转换
+        return (<div className="field">
+            <div className="level">
+                <div className="level-item">
+                    <span className="button is-static">Unix时间戳</span>
+                    <input className="input" type="text" name="timestamp" value={this.state.timestamp}
+                           onChange={this.HandleChange}/>
+                    <div className="select">
+                        <select name="unit" onChange={this.HandleChange}
+                                value={this.state.unit}>
+                            <option value="1">ms</option>
+                            <option value="2">s</option>
+                        </select>
+                    </div>
+                </div>
+                <button className="level-item button is-success is-light" onClick={this.Translate}><i
+                    className="fa fa-exchange"/>转换
                 </button>
-                <input type="text" name="datetime" value={this.state.datetime} onChange={this.HandleChange}/>
+                <div className="level-item">
+                    <input className="input" type="text" name="datetime" value={this.state.datetime}
+                           onChange={this.HandleChange}/>
+                </div>
             </div>
-            <br/>
-            <div className="group">
-                <span className="label">北京时间</span>
-                <input type="text" name="datetime1" value={this.state.datetime1} onChange={this.HandleChange}/>
-                <button className="button success" onClick={this.Translate1}><i className="fa fa-exchange"/>转换
+            <div className="level">
+                <div className="level-item">
+                    <span className="button is-static">北京时间</span>
+                    <input className="input is-expanded" type="text" name="datetime1" value={this.state.datetime1}
+                           onChange={this.HandleChange}/>
+                </div>
+                <button className="level-item button  is-success is-light" onClick={this.Translate1}><i
+                    className="fa fa-exchange"/>转换
                 </button>
-                <input type="text" name="timestamp1" value={this.state.timestamp1} onChange={this.HandleChange}/>
-                <select className="select" name="unit1" onChange={this.HandleChange}
-                        value={this.state.unit1}>
-                    <option value="1">ms</option>
-                    <option value="2">s</option>
-                </select>
+                <div className="level-item">
+                    <input className="input" type="text" name="timestamp1" value={this.state.timestamp1}
+                           onChange={this.HandleChange}/>
+                    <div className="select">
+                        <select className="select" name="unit1" onChange={this.HandleChange}
+                                value={this.state.unit1}>
+                            <option value="1">ms</option>
+                            <option value="2">s</option>
+                        </select>
+                    </div>
+                </div>
             </div>
         </div>)
     }
