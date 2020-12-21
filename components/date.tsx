@@ -26,7 +26,6 @@ export default class DateTranslate extends React.Component<any, isState> {
             timestamp: timestamp,
             unit: 1,
             unit1: 1,
-
             datetime1: dateFormat(new Date(parseInt(timestamp))),
         };
         this.HandleChange = this.HandleChange.bind(this);
@@ -69,7 +68,7 @@ export default class DateTranslate extends React.Component<any, isState> {
             return
         }
         this.setState({
-            datetime1: (new Date(input).getTime() / 1000) + ''
+            timestamp1: (new Date(input).getTime() / 1000) + ''
         })
     }
 
