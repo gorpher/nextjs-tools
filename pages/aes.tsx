@@ -1,5 +1,5 @@
 import {Layout} from "../components/layout";
-import React, {useState} from "react";
+import React from "react";
 import CryptoJS from 'crypto-js';
 import Nav from "../components/nav";
 
@@ -25,8 +25,8 @@ export default class DES extends React.Component<any, isState> {
         super(props);
         this.storageKey = 'aes'
         this.siteTitle = 'AES加密/解密'
-        this.keyword='AES加密,AES解密,AES算法'
-        this.description='在线AES加密、解密工具,AES加密,AES解密,AES算法'
+        this.keyword = 'AES加密,AES解密,AES算法'
+        this.description = '在线AES加密、解密工具,AES加密,AES解密,AES算法'
         this.Decrypt = this.Decrypt.bind(this);
         this.Encrypt = this.Encrypt.bind(this);
         this.Clear = this.Clear.bind(this);
@@ -199,54 +199,51 @@ export default class DES extends React.Component<any, isState> {
         return (
             <Layout siteTitle={this.siteTitle} right={<Nav/>}>
                 <div>
-                    <div>
+                    <div className="mt2">
                         <textarea className="textarea" cols={30} rows={10} name="a" value={this.state.a}
                                   onChange={this.handleChange}/>
                     </div>
-                    <div>
-                        <div className="group">
-                            <span className="label">模式</span>
-                            <select className="select" name="param1" onChange={this.handleChange}
-                                    value={this.state.param1}>
-                                <option value="CBC">CBC</option>
-                                <option value="ECB">ECB</option>
-                                <option value="CFB">CFB</option>
-                                <option value="CTR">CTR</option>
-                                <option value="OFB">OFB</option>
-                            </select>
-                            <span className="label">填充</span>
-                            <select className="select" name="param2" onChange={this.handleChange}
-                                    value={this.state.param2}>
-                                <option value="Pkcs7">Pkcs7</option>
-                                <option value="Iso97971">Iso97971</option>
-                                <option value="AnsiX923">AnsiX923</option>
-                                <option value="Iso10126">Iso10126</option>
-                                <option value="ZeroPadding">ZeroPadding</option>
-                                <option value="NoPadding">NoPadding</option>
-                            </select>
-                            <input className="input" type="text" placeholder="偏移量" style={{width: 300}} name="iv"
-                                   value={this.state.iv}
-                                   onChange={this.handleChange}/>
-                            <span className="label">编码</span>
-                            <select className="select" name="encode" onChange={this.handleChange}
-                                    value={this.state.encode}>
-                                <option value="BASE64">BASE64</option>
-                                <option value="HEX">HEX</option>
-                            </select>
-                        </div>
-                        <br/>
-                        <div className="group">
-                            <span className="label">密钥</span>
-                            <input className="input" type="text" name="key" value={this.state.key}
-                                   onChange={this.handleChange}/>
-                            <button className="button success" onClick={this.Encrypt}><i className="fa fa-arrow-down"/>加密
-                            </button>
-                            <button className="button info" onClick={this.Decrypt}><i className="fa fa-arrow-up"/>解密
-                            </button>
-                            <button className="button" onClick={this.Clear}>清空</button>
-                        </div>
+                    <div className="group mt2 fullwidth">
+                        <span className="static">模式</span>
+                        <select className="select" name="param1" onChange={this.handleChange}
+                                value={this.state.param1}>
+                            <option value="CBC">CBC</option>
+                            <option value="ECB">ECB</option>
+                            <option value="CFB">CFB</option>
+                            <option value="CTR">CTR</option>
+                            <option value="OFB">OFB</option>
+                        </select>
+                        <span className="static">填充</span>
+                        <select className="select" name="param2" onChange={this.handleChange}
+                                value={this.state.param2}>
+                            <option value="Pkcs7">Pkcs7</option>
+                            <option value="Iso97971">Iso97971</option>
+                            <option value="AnsiX923">AnsiX923</option>
+                            <option value="Iso10126">Iso10126</option>
+                            <option value="ZeroPadding">ZeroPadding</option>
+                            <option value="NoPadding">NoPadding</option>
+                        </select>
+                        <input className="input" type="text" name="iv" placeholder="偏移量"
+                               value={this.state.iv}
+                               onChange={this.handleChange}/>
+                        <span className="static">编码</span>
+                        <select className="select" name="encode" onChange={this.handleChange}
+                                value={this.state.encode}>
+                            <option value="BASE64">BASE64</option>
+                            <option value="HEX">HEX</option>
+                        </select>
                     </div>
-                    <div>
+                    <div className="group mt1 fullwidth">
+                        <span className="static">密钥</span>
+                        <input className="input" type="text" name="key" value={this.state.key}
+                               onChange={this.handleChange}/>
+                        <button className="button success" onClick={this.Encrypt}><i className="fa fa-arrow-down"/>加密
+                        </button>
+                        <button className="button info" onClick={this.Decrypt}><i className="fa fa-arrow-up"/>解密
+                        </button>
+                        <button className="button" onClick={this.Clear}>清空</button>
+                    </div>
+                    <div className="mt2">
                         <textarea className="textarea" cols={30} rows={10} name="b" value={this.state.b}
                                   onChange={this.handleChange}/>
                     </div>

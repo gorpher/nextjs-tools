@@ -73,32 +73,37 @@ export default class DateTranslate extends React.Component<any, isState> {
     }
 
     render() {
-        return (<div>
-            <div className="group">
-                <span className="label">Unix时间戳</span>
-                <input type="text" name="timestamp" value={this.state.timestamp} onChange={this.HandleChange}/>
-                <select className="select" name="unit" onChange={this.HandleChange}
-                        value={this.state.unit}>
-                    <option value="1">ms</option>
-                    <option value="2">s</option>
-                </select>
-                <button className="button success" onClick={this.Translate}><i className="fa fa-exchange"/>转换
-                </button>
-                <input type="text" name="datetime" value={this.state.datetime} onChange={this.HandleChange}/>
+        return (<>
+            <div className="fullwidth mt2 flex">
+                <div className="group">
+                    <span className="static" style={{width: 120}}>Unix时间戳</span>
+                    <input className="input" type="text" name="timestamp" value={this.state.timestamp || ''}
+                           onChange={this.HandleChange}/>
+                    <select className="select" name="unit" onChange={this.HandleChange}
+                            value={this.state.unit}>
+                        <option value="1">ms</option>
+                        <option value="2">s</option>
+                    </select>
+                    <button className="button" onClick={this.Translate}><i className="fa fa-exchange"/>转换
+                    </button>
+                    <input className="input" type="text" name="datetime" value={this.state.datetime || ''}
+                           onChange={this.HandleChange}/>
+                </div>
             </div>
-            <br/>
-            <div className="group">
-                <span className="label">北京时间</span>
-                <input type="text" name="datetime1" value={this.state.datetime1} onChange={this.HandleChange}/>
-                <button className="button success" onClick={this.Translate1}><i className="fa fa-exchange"/>转换
-                </button>
-                <input type="text" name="timestamp1" value={this.state.timestamp1} onChange={this.HandleChange}/>
+            <div className="group mt2 flex">
+                <span className="static" style={{width: 120}}>北京时间</span>
+                <input className="input" type="text" name="datetime1" value={this.state.datetime1 || ''}
+                       onChange={this.HandleChange}/>
                 <select className="select" name="unit1" onChange={this.HandleChange}
                         value={this.state.unit1}>
                     <option value="1">ms</option>
                     <option value="2">s</option>
                 </select>
+                <button className="button" onClick={this.Translate1}><i className="fa fa-exchange"/>转换
+                </button>
+                <input className="input" type="text" name="timestamp1" value={this.state.timestamp1 || ''}
+                       onChange={this.HandleChange}/>
             </div>
-        </div>)
+        </>)
     }
 }

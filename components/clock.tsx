@@ -66,21 +66,25 @@ export default class Clock extends React.Component<any, isState> {
 
     render() {
         return (
-            <div className="group">
-                <span className="label">当前时间</span>
-                <input type="text" defaultValue={this.state.now}/>
-                <select className="select" name="unit" onChange={this.HandleChange}
-                        value={this.state.unit}>
-                    <option value="1">ms</option>
-                    <option value="2">s</option>
-                </select>
-                <span className="label"></span>
-                <button className="button success" onClick={this.Start}><i className="fa fa-play"/>开始
-                </button>
-                <button className="button info" onClick={this.Stop}><i className="fa fa-stop"/>停止
-                </button>
-                <button className="button" onClick={this.Refresh}>刷新</button>
+            <div className="mt2 fullwidth flex">
+                <div className="group" style={{marginRight: '1em', flexShrink: 2}}>
+                    <span className="static" style={{width: 120}}>当前时间</span>
+                    <input className="input text-info" type="text" defaultValue={this.state.now}/>
+                    <select className="select" name="unit" onChange={this.HandleChange}
+                            value={this.state.unit}>
+                        <option value="1">ms</option>
+                        <option value="2">s</option>
+                    </select>
+                </div>
+                <div className="group">
+                    <button className="button success" onClick={this.Start}><i className="fa fa-play"/>开始
+                    </button>
+                    <button className="button info" onClick={this.Stop}><i className="fa fa-stop"/>停止
+                    </button>
+                    <button className="button" onClick={this.Refresh}>刷新</button>
+                </div>
             </div>
+
         );
     }
 }

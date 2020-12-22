@@ -16,9 +16,7 @@ export default class Timestamp extends React.Component<any> {
         return (
             <Layout siteTitle={this.siteTitle}>
                 <Clock/>
-                <br/>
                 <DateTranslate/>
-                <br/>
             </Layout>
         );
     }
