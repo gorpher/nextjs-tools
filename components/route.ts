@@ -2,7 +2,7 @@ export default function Route() {
     return [
         [
             {url: "/json", title: 'JSON格式化', kind: 'json'},
-            {url: "/json2xml", title: 'JSON转换', kind: 'json'},
+            {url: "/json2", title: 'JSON转换', kind: 'json'},
         ],
         [
             {url: "/aes", title: 'AES加密解密', kind: "加密"},

@@ -149,7 +149,7 @@ export default class Hash extends React.Component<any, isState> {
                         </select>
                         <input className="input" type="text" name="key" value={this.state.key} placeholder="密钥,非必填"
                                onChange={this.handleChange}/>
-                        <button className="button success" onClick={this.Encrypt}><i className="fa fa-arrow-down"/>计算
+                        <button className="button success" onClick={this.Encrypt}><i className="fa fa-arrow-down fa-icon"/>计算
                         </button>
                         <button className="button" onClick={this.Clear}>清空</button>
                     </div>

@@ -100,9 +100,9 @@ export default class Base64 extends React.Component<any, isState> {
                     </div>
                     <div className="content-center mt2">
                         <div>
-                            <button className="button success" onClick={this.Encrypt}><i className="fa fa-arrow-down"/>编码
+                            <button className="button success" onClick={this.Encrypt}><i className="fa fa-arrow-down fa-icon"/>编码
                             </button>
-                            <button className="button info" onClick={this.Decrypt}><i className="fa fa-arrow-up"/>解码
+                            <button className="button info" onClick={this.Decrypt}><i className="fa fa-arrow-up fa-icon"/>解码
                             </button>
                             <button className="button" onClick={this.Clear}>清空</button>
                         </div>

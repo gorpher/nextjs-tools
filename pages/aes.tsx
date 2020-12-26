@@ -237,9 +237,9 @@ export default class DES extends React.Component<any, isState> {
                         <span className="static">密钥</span>
                         <input className="input" type="text" name="key" value={this.state.key}
                                onChange={this.handleChange}/>
-                        <button className="button success" onClick={this.Encrypt}><i className="fa fa-arrow-down"/>加密
+                        <button className="button success" onClick={this.Encrypt}><i className="fa fa-arrow-down fa-icon"/>加密
                         </button>
-                        <button className="button info" onClick={this.Decrypt}><i className="fa fa-arrow-up"/>解密
+                        <button className="button info" onClick={this.Decrypt}><i className="fa fa-arrow-up fa-icon"/>解密
                         </button>
                         <button className="button" onClick={this.Clear}>清空</button>
                     </div>

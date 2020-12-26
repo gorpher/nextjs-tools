@@ -42,10 +42,12 @@ export function Header() {
 }
 
 
-export function Layout({children, left, right, siteTitle, description, keyword}: {
+export function Layout({children, left, right, siteTitle, link, script, description, keyword}: {
     children: React.ReactNode
     left?: React.ReactNode
     right?: React.ReactNode
+    link?: React.ReactNode
+    script?: React.ReactNode
     siteTitle?: string
     keyword?: string
     description?: string
@@ -55,7 +57,11 @@ export function Layout({children, left, right, siteTitle, description, keyword}:
             <Head>
                 <link rel="icon" href="/favicon.ico"/>
                 <meta name="baidu-site-verification" content="code-Xbqjfarq6u"/>
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
+                <link href="https://cdn.bootcss.com/font-awesome/5.10.0-11/css/all.min.css" rel="stylesheet"/>
+
+                {
+                    link
+                }
                 <meta name="description" content={description}/>
                 <meta name="keywords" content={keyword}/>
                 {
@@ -83,6 +89,9 @@ export function Layout({children, left, right, siteTitle, description, keyword}:
                     {right}
                 </Right>
             </div>
+            {
+                script
+            }
         </>
     )
 }

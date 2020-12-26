@@ -365,3 +365,18 @@ input[type=checkbox]:hover,
     color: var(--color-button);
     background: var(--color-info);
 }
+
+.fa-icon{
+    color: var(--color-button);
+}
+.editarea {
+    width: 1px;
+
+    height: 90vh;
+
+    flex-grow: 1
+}
+
+pre {
+    overflow: auto;
+}
