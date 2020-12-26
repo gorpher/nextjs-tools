@@ -33,6 +33,11 @@ export default class JsonReact extends React.Component<any, isState> {
             if (state) {
                 this.setState({});
             }
+            // @ts-ignore
+            if (window.Init) {
+                // @ts-ignore
+                window.Init()
+            }
         }
     }
 
@@ -52,9 +57,30 @@ export default class JsonReact extends React.Component<any, isState> {
 
     render() {
         return (
-            <Layout siteTitle={this.siteTitle} right={<Nav/>}>
-                <div>
-
+            <Layout siteTitle={this.siteTitle} right={<Nav/>} link={
+                <link href="https://cdn.bootcss.com/jsoneditor/6.1.0/jsoneditor.min.css" rel="stylesheet"
+                      type="text/css"/>
+            }
+                    script={
+                        <>
+                            <script src="https://cdn.bootcss.com/jsoneditor/6.1.0/jsoneditor.min.js"/>
+                            <script src="/js/json.js"/>
+                        </>
+                    }
+            >
+                <div className="flex mt2">
+                    <div id="json_editor" className="editarea">
+                    </div>
+                    <div className="mid-menus">
+                        <div>
+                            <button className="button" id="toTree">
+                                <i className="fa fa-arrow-right"></i></button>
+                            <button className="button" id="toJson">
+                                <i className="fa fa-arrow-left"></i></button>
+                            <button className="button" id="cleanup">清空</button>
+                        </div>
+                    </div>
+                    <div id="tree_editor" className="editarea"></div>
                 </div>
             </Layout>
         )

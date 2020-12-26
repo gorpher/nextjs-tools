@@ -21,10 +21,6 @@ export default class JsonReact extends React.Component<any, isState> {
         this.state = this.getInitialState()
     }
 
-    static async getInitialProps({req}) {
-        const userAgent = req ? req.headers['user-agent'] : navigator.userAgent
-        return {userAgent}
-    }
 
     getInitialState() {
         return {}
@@ -38,7 +34,9 @@ export default class JsonReact extends React.Component<any, isState> {
                 this.setState({});
             }
 
+            // @ts-ignore
             if (window.Init) {
+                // @ts-ignore
                 window.Init()
             }
         }

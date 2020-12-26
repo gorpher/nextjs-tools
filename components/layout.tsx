@@ -67,13 +67,13 @@ export function Layout({children, left, right, siteTitle, link, script, descript
                 {
                     siteTitle ? (
                         <>
-                            <meta name="og:title" content={siteTitle + '｜' + '在线工具 - MyTool'}/>
-                            <title>{siteTitle + '｜' + '在线工具 - MyTool'}</title>
+                            <meta name="og:title" content={siteTitle + '｜' + '在线工具 - AlaTools'}/>
+                            <title>{siteTitle + '｜' + '在线工具 - AlaTools'}</title>
                         </>
                     ) : (
                         <>
-                            <meta name="og:title" content={'我的在线工具 - MyTool'}/>
-                            <title>{'我的在线工具 - MyTool'}</title>
+                            <meta name="og:title" content={'我的在线工具 - AlaTools'}/>
+                            <title>{'我的在线工具 - AlaTools'}</title>
                         </>
                     )
                 }
