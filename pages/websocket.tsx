@@ -16,10 +16,10 @@ export default class Page extends React.Component<any, isState> {
 
     constructor(props) {
         super(props);
-        this.storageKey = 'websocket'
-        this.siteTitle = 'websocket'
-        this.keyword = 'websocket'
-        this.description = 'websocket'
+        this.storageKey = 'Websocket'
+        this.siteTitle = 'WebSocket测试'
+        this.keyword = 'WebSocket,WebSocket测试,WebSocket工具'
+        this.description = '在线WebSocket测试工具,WebSocket测试,WebSocket工具'
     }
 
 
@@ -36,7 +36,7 @@ export default class Page extends React.Component<any, isState> {
 
     render() {
         return (
-            <Layout siteTitle={this.siteTitle} right={<Nav/>} script={
+            <Layout  siteTitle={this.siteTitle} keyword={this.keyword} description={this.description}  right={<Nav/>} script={
                 <script src="/js/websocket.js"/>
             }>
                 <div>

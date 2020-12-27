@@ -14,9 +14,9 @@ export default class Page extends React.Component<any, isState> {
     constructor(props) {
         super(props);
         this.storageKey = 'rsa'
-        this.siteTitle = 'rsa加解密'
-        this.keyword = 'rsa加解密'
-        this.description = 'rsa加解密'
+        this.siteTitle = 'RSA加密、RSA解密'
+        this.keyword = 'RSA加密,RSA解密,RSA算法,RSA私钥,RSA公钥'
+        this.description = '在线RSA加密、解密工具,RSA解密,RSA算法,RSA私钥,RSA公钥'
         this.handleChange = this.handleChange.bind(this);
         this.state = this.getInitialState()
     }
@@ -57,7 +57,7 @@ export default class Page extends React.Component<any, isState> {
 
     render() {
         return (
-            <Layout siteTitle={this.siteTitle} right={<Nav/>} link={
+            <Layout  siteTitle={this.siteTitle} keyword={this.keyword} description={this.description}  right={<Nav/>} link={
                 <link href="https://cdn.bootcss.com/jsoneditor/6.1.0/jsoneditor.min.css" rel="stylesheet"
                       type="text/css"/>
             }

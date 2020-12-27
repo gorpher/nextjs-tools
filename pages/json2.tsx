@@ -57,7 +57,7 @@ export default class Page extends React.Component<any, isState> {
 
     render() {
         return (
-            <Layout siteTitle={this.siteTitle} right={<Nav/>} link={
+            <Layout  siteTitle={this.siteTitle} keyword={this.keyword} description={this.description} right={<Nav/>} link={
                 <link href="https://cdn.bootcss.com/highlight.js/9.15.9/styles/idea.min.css" rel="stylesheet"/>
             }
                     script={

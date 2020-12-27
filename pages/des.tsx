@@ -196,7 +196,7 @@ export default class Page extends React.Component<any, isState> {
 
     render() {
         return (
-            <Layout siteTitle={this.siteTitle} right={<Nav/>}>
+            <Layout  siteTitle={this.siteTitle} keyword={this.keyword} description={this.description}  right={<Nav/>}>
                 <div>
                     <div className="mt2">
                         <textarea className="textarea" cols={30} rows={10} name="a" value={this.state.a}

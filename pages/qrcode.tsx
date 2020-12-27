@@ -15,8 +15,8 @@ export default class Page extends React.Component<any, isState> {
         super(props);
         this.storageKey = 'qrcode'
         this.siteTitle = '在线二维码生成'
-        this.keyword = '在线二维码生成'
-        this.description = '在线二维码生成'
+        this.keyword = '二维码,二维码制作,二维码生成,二维码图片'
+        this.description = '在线二维码制作工具,二维码制作,二维码生成,二维码图片'
         this.handleChange = this.handleChange.bind(this);
         this.state = this.getInitialState()
     }
@@ -57,7 +57,7 @@ export default class Page extends React.Component<any, isState> {
 
     render() {
         return (
-            <Layout siteTitle={this.siteTitle} right={<Nav/>} link={
+            <Layout  siteTitle={this.siteTitle} keyword={this.keyword} description={this.description}  right={<Nav/>} link={
                 <link href="https://cdn.bootcss.com/jsoneditor/6.1.0/jsoneditor.min.css" rel="stylesheet"
                       type="text/css"/>
             }

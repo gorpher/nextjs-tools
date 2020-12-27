@@ -19,10 +19,10 @@ export default class Page extends React.Component<any, isState> {
 
     constructor(props) {
         super(props);
-        this.storageKey = 'unicode'
-        this.siteTitle = 'unicode编码'
-        this.keyword = 'unicode编码'
-        this.description = 'unicode编码'
+        this.storageKey = 'Unicode'
+        this.siteTitle = 'Unicode转中文、中文Unicode编码、ASCII转Unicode、Unicode转ASCII'
+        this.keyword = 'Unicode转中文,中文转Unicode,ASCII转Unicode,Unicode转ASCII'
+        this.description = '在线Unicode编码转换工具,Unicode转中文,中文转Unicode,ASCII转Unicode,Unicode转ASCII'
         this.Clear = this.Clear.bind(this);
         this.u2c = this.u2c.bind(this);
         this.c2u = this.c2u.bind(this);
@@ -130,7 +130,7 @@ export default class Page extends React.Component<any, isState> {
 
     render() {
         return (
-            <Layout siteTitle={this.siteTitle} right={<Nav/>}>
+            <Layout  siteTitle={this.siteTitle} keyword={this.keyword} description={this.description}  right={<Nav/>}>
                 <div>
                     <div className="mt2">
                         <textarea className="textarea" cols={30} rows={10} name="a" value={this.state.a}

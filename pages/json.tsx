@@ -14,9 +14,9 @@ export default class Page extends React.Component<any, isState> {
     constructor(props) {
         super(props);
         this.storageKey = 'json'
-        this.siteTitle = 'json在线编辑格式化'
-        this.keyword = 'json在线编辑格式化'
-        this.description = 'json在线编辑格式化'
+        this.siteTitle = 'JSON在线编辑格式化'
+        this.keyword = 'JSON,JSON解析,JSON格式化,JSON编辑'
+        this.description = '在线JSON格式化工具,JSON解析,JSON格式化,JSON编辑'
         this.handleChange = this.handleChange.bind(this);
         this.state = this.getInitialState()
     }
@@ -57,7 +57,7 @@ export default class Page extends React.Component<any, isState> {
 
     render() {
         return (
-            <Layout siteTitle={this.siteTitle} right={<Nav/>} link={
+            <Layout  siteTitle={this.siteTitle} keyword={this.keyword} description={this.description}  right={<Nav/>} link={
                 <link href="https://cdn.bootcss.com/jsoneditor/6.1.0/jsoneditor.min.css" rel="stylesheet"
                       type="text/css"/>
             }

@@ -1,5 +1,6 @@
 function Init() {
     let img_qrcode = document.getElementById('img_qrcode');
+    img_qrcode.crossOrigin = '*';
     let area_text = document.getElementById('area_text');
     let generateBtn = document.getElementById('generate_btn');
     let saveBtn = document.getElementById('save_btn');
@@ -85,8 +86,7 @@ function Init() {
     }
 
     let save = function () {
-        let img = img_qrcode.getElementsByTagName('img')[0];
-        let url = img.src;
+        let url = img_qrcode.getElementsByTagName('canvas')[0].toDataURL("image/png");
         let a = document.createElement('a');
         let event = new MouseEvent('click');
         a.download = 'qrcode_' + Math.round(new Date() / 1000);

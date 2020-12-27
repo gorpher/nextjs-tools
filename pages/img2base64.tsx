@@ -16,8 +16,8 @@ export default class Page extends React.Component<any, isState> {
         super(props);
         this.storageKey = 'img2base64'
         this.siteTitle = '图片Base64编码'
-        this.keyword = '图片Base64编码'
-        this.description = '图片Base64编码'
+        this.keyword = 'Base64,图片Base64编码,Base64转图片'
+        this.description = '在线图片Base64编码工具,图片Base64编码,Base64转图片'
         this.handleChange = this.handleChange.bind(this);
         this.state = this.getInitialState()
     }
@@ -53,7 +53,7 @@ export default class Page extends React.Component<any, isState> {
 
     render() {
         return (
-            <Layout siteTitle={this.siteTitle} right={<Nav/>}
+            <Layout  siteTitle={this.siteTitle} keyword={this.keyword} description={this.description}  right={<Nav/>}
                     script={
                         <script src="/js/img2base64.js"></script>
                     }
