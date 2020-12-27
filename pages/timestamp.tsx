@@ -4,7 +4,7 @@ import DateTranslate from "../components/date";
 import {Layout} from "../components/layout";
 
 
-export default class Timestamp extends React.Component<any> {
+export default class Page extends React.Component<any> {
     private readonly siteTitle: string;
 
     constructor(props) {

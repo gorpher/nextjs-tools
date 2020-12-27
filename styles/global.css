@@ -434,3 +434,25 @@ input[type=checkbox]:hover,
 pre {
     overflow: auto;
 }
+
+.options {
+    width: 200px;
+    margin: 0 24px
+}
+
+#input_size {
+    max-width: 111px
+}
+
+.image {
+    width: 280px;
+    height: 280px;
+    background-color: #f3f3f3;
+    clear: both;
+    display: block;
+    margin: auto
+}
+
+.content p:not(:last-child), .content ol:not(:last-child), .content ul:not(:last-child), .content pre:not(:last-child), .content table:not(:last-child) {
+    margin-bottom: 16px;
+}

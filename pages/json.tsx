@@ -5,7 +5,7 @@ import Nav from "../components/nav";
 interface isState {
 }
 
-export default class JsonReact extends React.Component<any, isState> {
+export default class Page extends React.Component<any, isState> {
     private readonly storageKey: string;
     private readonly siteTitle: string;
     private readonly description: string;

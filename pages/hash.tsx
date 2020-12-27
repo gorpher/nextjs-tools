@@ -11,7 +11,7 @@ interface isState {
     encode?: string
 }
 
-export default class Hash extends React.Component<any, isState> {
+export default class Page extends React.Component<any, isState> {
     private readonly storageKey: string;
     private readonly siteTitle: string;
     private readonly description: string;
