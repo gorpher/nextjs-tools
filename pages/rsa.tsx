@@ -63,7 +63,7 @@ export default class JsonReact extends React.Component<any, isState> {
             }
                     script={
                         <>
-                            <script src="http://static.matosiki.site/static/jsencrypt.min.js"/>
+                            <script src="/js/jsencrypt.min.js"/>
                             <script src="/js/rsa.js"/>
                         </>
                     }
