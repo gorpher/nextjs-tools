@@ -13,7 +13,6 @@ export default function Route() {
             {url: "/base64", title: 'Base64', kind: "编码"},
             {url: "/img2base64", title: '图片Base64', kind: "编码"},
             {url: "/hash", title: 'Hash计算', kind: "编码"},
-            {url: "/hashf", title: '文件Hash', kind: "编码"},
             {url: "/url", title: 'URL编码解码', kind: "编码"},
             {url: "/unicode", title: 'Unicode编码', kind: "编码"},
         ],
