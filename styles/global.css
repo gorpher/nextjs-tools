@@ -369,8 +369,18 @@ input[type=checkbox]:hover,
 .fa-icon {
     color: var(--color-button);
 }
-
-
+.text-success{
+    color: var(--color-success);
+}
+.text-success:hover{
+    color: var(--color-success-hover);
+}
+.text-error{
+    color: var(--color-danger);
+}
+.text-error:hover{
+    color: var(--color-danger-hover);
+}
 .file,
 .file-zone {
     display: flex;
