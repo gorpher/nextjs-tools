@@ -10,7 +10,7 @@ export default function Nav() {
             <a>
                 <figure><img src="/images/favicon.svg"/></figure>
             </a>
-            <a href="/" className={styles.mute}>幸运三叶草</a>
+            <a href="/" className={styles.mute}>大道至简-在线工具</a>
         </div>
         <nav>
             {
