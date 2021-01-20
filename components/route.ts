@@ -42,9 +42,10 @@ export default function Route() {
                 title: '高德坐标转换工具',
                 kind: "其他"
             },
-            {url: "/ip", title: 'IP地址查询', kind: "其他"},
-            {url: "/tinyimg", title: '图片压缩', kind: "其他"},
-            {url: "/regex", title: '正则表达式', kind: "其他"},
+            {url: 'https://thispersondoesnotexist.com', title: '人脸头像在线生成', kind: "其他"},
+            {url: "https://oktools.net/ip", title: 'IP地址查询', kind: "其他"},
+            {url: "https://oktools.net/tinyimg", title: '图片压缩', kind: "其他"},
+            {url: "https://oktools.net/regex", title: '正则表达式', kind: "其他"},
         ],
     ]
 }
