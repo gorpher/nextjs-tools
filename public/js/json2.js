@@ -370,6 +370,10 @@ new ClipboardJS('.button').on('success', function () {
 function Init() {
     let input = document.getElementById('input');
     let output = document.getElementById('output');
+    let state = JSON.parse(window.localStorage.getItem("json"));
+    if (state) {
+        input.innerText = state.json || ""
+    }
 
     function formatXml(xml) {
         let formatted = '';
@@ -477,5 +481,6 @@ function Init() {
     document.getElementById('toFormatJson2').addEventListener('click', () => toFormatJson(true));
     document.getElementById('toStruct').addEventListener('click', () => toStruct());
     document.getElementById('toStruct2').addEventListener('click', () => toStruct(false));
+    document.getElementById('toFormatJson').click()
 
 }

@@ -73,6 +73,17 @@ export default class Page extends React.Component<any, isState> {
                     </div>
                     <div className="mid-menus">
                         <div>
+                            <button className="button primary toPage" ><i
+                                className="fa fa-arrow-right fa-icon"/>YAML
+                            </button>
+                            <button className="button primary toPage"><i
+                                className="fa fa-arrow-right fa-icon"/>XML
+                            </button>
+                            <button className="button primary toPage"><i
+                                className="fa fa-arrow-right fa-icon"/>csv
+                            </button>
+                            <button className="button primary toPage">结构体-展开</button>
+                            <button className="button primary toPage" >结构体-嵌套</button>
                             <button className="button" id="toTree">
                                 <i className="fa fa-arrow-right"></i></button>
                             <button className="button" id="toJson">
