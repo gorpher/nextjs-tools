@@ -493,3 +493,15 @@ pre {
     display: block;
     bottom: -1px;
 }
+.under-line{
+    border-bottom: 1px solid #ebebeb;
+}
+
+.flex-center{
+    display: flex;
+    justify-content: center;
+}
+.flex-around{
+    display: flex;
+    justify-content: space-around;
+}
