@@ -130,7 +130,8 @@ export default function Quick() {
     </div>)
 }
 
-var gbrt = ["年", "周", "天", "小时", "分", "秒", "毫秒", "微秒", "纳秒"];
+var range = ["年", "周", "天", "小时", "分", "秒", "毫秒", "微秒", "纳秒"];
+var unit = ["week", "week", "d", "h", "min", "s", "ms", "μs", "ns"];
 var factors = [0.0027397260273973, 0.14285714285714, 1, 24, 1440, 86400, 86400000, 86400000000, 86400000000000];
 
 function translateTimeValue(from: number, target: number, source: number) {
@@ -152,8 +153,7 @@ function fix(v) {
         return "0";
     let st = "" + v;
     let epos = st.indexOf('E');
-    if (epos == -1)
-        epos = st.indexOf('e');
+    if (epos == -1) epos = st.indexOf('e');
     let sdigi = Math.log(Math.abs(v)) / Math.LN10;
     let sdigif = Math.floor(sdigi);
     if (epos == -1) {
@@ -181,11 +181,8 @@ function fix(v) {
         let rou = szo.substring(0, inse);
         if (rest.length > 0)
             rou += "." + rest;
-        let sa
-        if (sdigif < 0)
-            sa = rou + "E";
-        else
-            sa = rou + "E+";
+        let sa = rou + "E+";
+        if (sdigif < 0) sa = rou + "E";
         let snow = sa + sdigif;
         let vanow = Math.abs(parseFloat(snow));
         let faqsvab = Math.abs(v);
@@ -201,10 +198,8 @@ function fix(v) {
                 snow = sa + String(sdigif - 1);
         }
         vanow = parseFloat(snow);
-        if (vanow > 1.1 * v || vanow < 0.9 * v)
-            return v;
-        else
-            return snow;
+        if (vanow > 1.1 * v || vanow < 0.9 * v) return v;
+        return snow;
     }
 }
 
@@ -222,7 +217,7 @@ function quickTime() {
         }
         return [translateTimeValue(from, to, parseInt(value))]
     }
-    return (<div >
+    return (<div className="shadow">
         <div className="flex mt2" style={{ justifyContent: "center" }}>
             <input className="input mr1 min-w-4 max-w-8" type="number" value={value} placeholder="请输入值" onChange={e => {
                 setValue(e.target.value)
@@ -232,58 +227,54 @@ function quickTime() {
                 setFrom(parseInt(e.target.value))
                 setResult(translate(parseInt(e.target.value), to, value))
             }} value={from}>
-                <option value="1">年</option>
-                <option value="2">周</option>
-                <option value="3">天</option>
-                <option value="4">时</option>
-                <option value="5">分</option>
-                <option value="6">秒</option>
-                <option value="7">毫秒</option>
-                <option value="8">微秒</option>
-                <option value="9">纳秒</option>
+                {
+                    range.map((name, i) => { return (<option value={i + 1}>{name}</option>) })
+                }
             </select>
             <button className="button success mr1" >转换</button>
             <select className="select" name="to" onChange={(e) => {
                 setTo(parseInt(e.target.value))
                 setResult(translate(from, parseInt(e.target.value), value))
-
             }} value={to}>
                 <option value="0">全部</option>
-                <option value="1">年</option>
-                <option value="2">周</option>
-                <option value="3">天</option>
-                <option value="4">时</option>
-                <option value="5">分</option>
-                <option value="6">秒</option>
-                <option value="7">毫秒</option>
-                <option value="8">微秒</option>
-                <option value="9">纳秒</option>
+                {
+                    range.map((name, i) => { return (<option value={i + 1}>{name}</option>) })
+                }
             </select>
         </div>
-        {
-            to === 0 && result && result.length && <div className="flex-center fullwidth" style={{ flexDirection: "column" }}>
-                <div className="flex-around">
-                    <div className="under-line">{result[1]} 周(week) </div>
-                    <div className="under-line">{result[2]} 天(d) </div>
-                </div>
-                <div className="flex-around ">
-                    <div className="under-line"> {result[3]} 时(h) </div>
-                    <div className="under-line"> {result[4]} 分(min)</div>
-                </div>
+        <div>
+            {
+                to === 0 && result && result.length && <div className="flex-center fullwidth" style={{ flexDirection: "column" }}>
+                    <div className="flex-around">
+                        <div className="under-line">{result[1]} 周(week) </div>
+                        <div className="under-line">{result[2]} 天(d) </div>
+                    </div>
+                    <div className="flex-around ">
+                        <div className="under-line"> {result[3]} 时(h) </div>
+                        <div className="under-line"> {result[4]} 分(min)</div>
+                    </div>
 
-                <div className="flex-around ">
-                    <div className="under-line"> {result[5]} 秒(s) </div>
-                    <div className="under-line"> {result[6]} 毫秒(ms)</div>
-                </div>
+                    <div className="flex-around ">
+                        <div className="under-line"> {result[5]} 秒(s) </div>
+                        <div className="under-line"> {result[6]} 毫秒(ms)</div>
+                    </div>
 
-                <div className="flex-around ">
-                    <div className="under-line"> {result[7]} 微秒(μs) </div>
-                    <div className="under-line"> {result[8]} 纳秒(ns)</div>
+                    <div className="flex-around">
+                        <div className="under-line"> {result[7]} 微秒(μs) </div>
+                        <div className="under-line"> {result[8]} 纳秒(ns)</div>
+                    </div>
                 </div>
+            }
+            {
+                to !== 0 && result && result.length === 1 && <div className="flex-center fullwidth mt2">
+                    <h3>
+                        {result[0] + " " + range[to - 1] + "(" + unit[to - 1] + ")"}
+                    </h3>
+                </div>
+            }
+            <div className="flex mt2 " style={{ justifyContent: "end" }}>
+                <div> 国际单位：秒(s)</div>
             </div>
-        }
-        <div className="flex" style={{ justifyContent: "center" }}>
-            国际单位：秒(s)
         </div>
     </div>)
 }

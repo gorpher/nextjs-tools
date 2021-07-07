@@ -505,3 +505,19 @@ pre {
     display: flex;
     justify-content: space-around;
 }
+
+.shadow{
+    border: 1px solid  #eaeaea;
+    border-top: none;
+    padding: 12px;
+    border-radius: 15px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    text-align: left;
+    flex: 1 1;
+    transition: box-shadow .2s ease, border .2s ease;
+    transition-property: box-shadow, border;
+    transition-duration: 0.2s, 0.2s;
+    transition-timing-function: ease, ease;
+    transition-delay: 0s, 0s;
+}
