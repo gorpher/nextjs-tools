@@ -93,6 +93,10 @@ input::-webkit-inner-spin-button {
     margin-top: 16px
 }
 
+.mr1 {
+    margin-right: 12px
+}
+ 
 .input,
 .textarea,
 input[type=checkbox] {
@@ -465,4 +469,27 @@ pre {
 
 .content p:not(:last-child), .content ol:not(:last-child), .content ul:not(:last-child), .content pre:not(:last-child), .content table:not(:last-child) {
     margin-bottom: 16px;
+}
+.min-w-4{
+    min-width: 6rem;
+}
+
+.max-w-8{
+    max-width: 18rem;
+}
+
+
+.selected {
+    position: relative;
+    display: inline-block;
+}
+
+.selected::after {
+    position: absolute;
+    content: '';
+    width: calc(100% - 1em);
+    height: 2px;
+    background-color: rgb(255,62,0);
+    display: block;
+    bottom: -1px;
 }
